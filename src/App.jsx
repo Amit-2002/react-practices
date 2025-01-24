@@ -209,55 +209,111 @@
 
 
                                                 // user profile
-import React from 'react'
-import { useState } from 'react';
-import { useEffect } from 'react';
+// import React from 'react'
 // import { useState } from 'react';
+// import { useEffect } from 'react';
+// // import { useState } from 'react';
 
-function App() {
-  return (
-    <UserProfile/>
-  )
-}
+// function App() {
+//   return (
+//     <UserProfile/>
+//   )
+// }
 
-export default App
-
-
+// export default App
 
 
 
-function UserProfile(){
-    const [apiData, setData] = useState(null) 
-    const [bio, setBio] = useState(true)
 
-    const fetchData = async () => {
-        let response = await fetch('https://jsonplaceholder.typicode.com/users/1');
-        let data = await response.json();
-        setData(data);
-    }
 
-    useEffect(() => {
-        fetchData()
-    }, [])
+// function UserProfile(){
+//     const [apiData, setData] = useState(null) 
+//     const [bio, setBio] = useState(true)
 
-    console.log(apiData);
+//     const fetchData = async () => {
+//         let response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+//         let data = await response.json();
+//         setData(data);
+//     }
 
-    function handleClick(){
-        setBio((prev) => !prev);
-    }
+//     useEffect(() => {
+//         fetchData()
+//     }, [])
+
+//     console.log(apiData);
+
+//     function handleClick(){
+//         setBio((prev) => !prev);
+//     }
      
     
-    if(apiData){
-        return(
-            <>
-            <h3>Name: {apiData.name}</h3>
-            <p>Age: {apiData.id}</p>
-            <p>Bio: {bio ? apiData.company.catchPhrase : ''}</p>
+//     if(apiData){
+//         return(
+//             <>
+//             <h3>Name: {apiData.name}</h3>
+//             <p>Age: {apiData.id}</p>
+//             <p>Bio: {bio ? apiData.company.catchPhrase : ''}</p>
 
-            <button onClick={handleClick}>
-                {bio ? 'Hide' : 'Show'}
-            </button>
-            </>
-        )
-    }
-}
+//             <button onClick={handleClick}>
+//                 {bio ? 'Hide' : 'Show'}
+//             </button>
+//             </>
+//         )
+//     }
+// }
+
+
+
+
+
+// let url = 'https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid='+key; 
+
+// let key = 'f6e86befef45e6fa6779828ca8f7442a';
+// const url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + key;   
+// (async () => {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     console.log(data);
+// })()
+
+                                                           // wether data
+// import React, { useEffect, useState } from 'react'
+
+// function App() {
+//   return (
+//    <>
+//     <h1>Weather App</h1>
+//     < WeatherDisplay location='agra'/>
+//    </>
+//   )
+// }
+
+// export default App
+
+
+// function WeatherDisplay(props){
+//   const [apiData, setData] = useState(null);
+//   const key = 'f6e86befef45e6fa6779828ca8f7442a';
+//   const url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + key + '&q=' + props.location; 
+
+//   const getData = async() =>{
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     setData(data); 
+//   }
+
+//   useEffect(() => {
+//     getData();
+//   }, [])
+  
+//   if (apiData){
+//     return(
+//       <>
+//         <p>Location: {apiData.name}</p>
+//         <p>Temperature: {Math.floor(apiData.main.temp)}<sup>o</sup></p>
+//         <p>Condition: {apiData.weather[0].description}</p>
+//       </>
+//     )
+//   }
+  
+// }
