@@ -211,6 +211,8 @@
                                                 // user profile
 import React from 'react'
 import { useState } from 'react';
+import { useEffect } from 'react';
+// import { useState } from 'react';
 
 function App() {
   return (
@@ -224,23 +226,38 @@ export default App
 
 
 
-function UserProfile(props){
-    // let userBio = 'I am a developer';
-    // const [bio, setBio] = useState(true);
+function UserProfile(){
+    const [apiData, setData] = useState(null) 
+    const [bio, setBio] = useState(true)
 
-    function handleBtnText(){
-        setBio((pre) => !pre)
+    const fetchData = async () => {
+        let response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+        let data = await response.json();
+        setData(data);
     }
 
+    useEffect(() => {
+        fetchData()
+    }, [])
 
+    console.log(apiData);
+
+    function handleClick(){
+        setBio((prev) => !prev);
+    }
      
     
-    return(
-        <>
-        <h3>Name: {props.name}</h3>
-        <p>Age: {props.age}</p>
-        <p>Bio: {bio ? userBio : ''}</p>
-        <button onClick={handleBtnText}>{bio ? 'Hide':'Show'}</button>
-        </>
-    )
+    if(apiData){
+        return(
+            <>
+            <h3>Name: {apiData.name}</h3>
+            <p>Age: {apiData.id}</p>
+            <p>Bio: {bio ? apiData.company.catchPhrase : ''}</p>
+
+            <button onClick={handleClick}>
+                {bio ? 'Hide' : 'Show'}
+            </button>
+            </>
+        )
+    }
 }
