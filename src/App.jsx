@@ -149,57 +149,98 @@
 
 
                                                                 // Simple comment poster
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+
+// function App() {
+//   return (
+//     <CommentApp />
+//   )
+// }
+
+// export default App
+
+// function CommentApp(){
+//     const [commentsList, setCommentLists] = useState([]);
+
+//     function addComment(newComment){
+//         setCommentLists([...commentsList, newComment])
+//         // console.log(commentsList);  
+//     }
+
+//     return(
+//         <>
+//         <CommentInput onAddComment={addComment}/>
+//         <CommentsList comments={commentsList}/>
+//         </>
+//     )
+// }
+
+// const CommentInput = ({onAddComment}) =>{
+//     const [comment, setComment] = useState('');
+//     function handleSubmit(){
+//         event.preventDefault();
+//         onAddComment(comment);
+//         setComment('');
+//     }
+
+//     return(
+//         <form onSubmit={handleSubmit}>
+//             <input type="text" placeholder='Comment.' value={comment} onChange={(event) => setComment(event.target.value)}/>
+//             <button>Submit</button>
+//         </form>
+//     )
+// }
+
+
+// const CommentsList = ({comments}) => {
+//     return(
+//         <ul>
+//             {comments.map((comment) => {
+//                 return(
+//                     <li>{comment}</li>
+//                 )
+//             })}
+//         </ul>
+//     )
+// }
+
+
+
+
+
+                                                // user profile
+import React from 'react'
+import { useState } from 'react';
 
 function App() {
   return (
-    <CommentApp />
+    <UserProfile/>
   )
 }
 
 export default App
 
-function CommentApp(){
-    const [commentsList, setCommentLists] = useState([]);
 
-    function addComment(newComment){
-        setCommentLists([...commentsList, newComment])
-        // console.log(commentsList);  
+
+
+
+function UserProfile(props){
+    // let userBio = 'I am a developer';
+    // const [bio, setBio] = useState(true);
+
+    function handleBtnText(){
+        setBio((pre) => !pre)
     }
 
+
+     
+    
     return(
         <>
-        <CommentInput onAddComment={addComment}/>
-        <CommentsList comments={commentsList}/>
+        <h3>Name: {props.name}</h3>
+        <p>Age: {props.age}</p>
+        <p>Bio: {bio ? userBio : ''}</p>
+        <button onClick={handleBtnText}>{bio ? 'Hide':'Show'}</button>
         </>
-    )
-}
-
-const CommentInput = ({onAddComment}) =>{
-    const [comment, setComment] = useState('');
-    function handleSubmit(){
-        event.preventDefault();
-        onAddComment(comment);
-        setComment('');
-    }
-
-    return(
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder='Comment.' value={comment} onChange={(event) => setComment(event.target.value)}/>
-            <button>Submit</button>
-        </form>
-    )
-}
-
-
-const CommentsList = ({comments}) => {
-    return(
-        <ul>
-            {comments.map((comment) => {
-                return(
-                    <li>{comment}</li>
-                )
-            })}
-        </ul>
     )
 }
