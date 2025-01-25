@@ -317,3 +317,60 @@
 //   }
   
 // }
+
+
+
+
+
+
+
+
+
+
+
+                                                            // book review
+
+// function App() {
+//     const [bookData, setData] = React.useState(null);
+    
+//     async function getData(){
+//       let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+//       let data = await response.json();
+//       setData(data);
+//     }
+    
+//     React.useEffect(() => {
+//       getData();
+//     },[])
+  
+//     if (bookData){
+//       return(
+//         bookData.map((book) => {
+//         return (
+//           <BookReview title={book.title}
+//           author={book.id}
+//           rating={book.userId}
+//           review={book.body}
+//           />
+//         );
+//       })
+//         )
+//     }
+   
+//   }
+  
+//   function BookReview({title, author, rating, review}){
+//     return(
+//       <div>
+//         <h1>Book Review</h1>
+//         <h3>Title: {title}</h3>
+//         <strong><i>Author: {author}</i></strong>
+//         <p>Review: {review}</p>
+//         <span>Rating: {rating}</span>
+//       </div>
+      
+//     )
+//   }
+//   const rootElement = document.getElementById('root');
+//   ReactDOM.render(<App />, rootElement);
+  
