@@ -13,6 +13,8 @@
 //   )
 // }
 
+
+
 // import ToggleButton from "./project/ToggleButton"
 
 // export default Profile
@@ -385,32 +387,32 @@
 
 
 
-import {useNavigate, BrowserRouter} from 'react-router-dom'
+// import {useNavigate, BrowserRouter} from 'react-router-dom'
 
 
-const App = () => {
+// const App = () => {
 
-    // const err = useRouteError()
-    return (
-        <BrowserRouter>
-            <>
-            <h1>UseRoutError</h1>
-            <a />
-            </>
-        </BrowserRouter>
-    )
-}
+//     // const err = useRouteError()
+//     return (
+//         <BrowserRouter>
+//             <>
+//             <h1>UseRoutError</h1>
+//             <a />
+//             </>
+//         </BrowserRouter>
+//     )
+// }
 
-export default App
+// export default App
     
 
-function a (){
-    const nav = useNavigate();
-    console.log(nav);
-    return(
-        <h3>ldfkas</h3>
-    )
-}
+// function a (){
+//     const nav = useNavigate();
+//     console.log(nav);
+//     return(
+//         <h3>ldfkas</h3>
+//     )
+// }
 
 
 
@@ -450,3 +452,48 @@ function a (){
 // };
 
 // export default App;
+
+
+
+
+
+
+
+
+                        // BASIC ROUTS 
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Movie from "./pages/Movie";
+import Contacts from "./pages/Contacts";
+
+const App = () => {
+    const router = createBrowserRouter([
+        {
+            path:'/',
+            element: <Home />
+        },
+        {
+            path:'/about',
+            element: <About />
+        },
+        {
+            path:'/movie',
+            element: <Movie />
+        },
+        {
+            path:'/contacts',
+            element: <Contacts />
+        }
+    ]);
+
+
+    return(
+       <>
+         <h1>React Router</h1>
+         <RouterProvider router={router}/>
+       </>
+    )
+}
+export default App;
