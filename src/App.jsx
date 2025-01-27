@@ -374,3 +374,79 @@
 //   const rootElement = document.getElementById('root');
 //   ReactDOM.render(<App />, rootElement);
   
+
+
+
+
+
+
+
+
+
+
+
+import {useNavigate, BrowserRouter} from 'react-router-dom'
+
+
+const App = () => {
+
+    // const err = useRouteError()
+    return (
+        <BrowserRouter>
+            <>
+            <h1>UseRoutError</h1>
+            <a />
+            </>
+        </BrowserRouter>
+    )
+}
+
+export default App
+    
+
+function a (){
+    const nav = useNavigate();
+    console.log(nav);
+    return(
+        <h3>ldfkas</h3>
+    )
+}
+
+
+
+
+
+
+            // gpt code 
+
+// import { useNavigate, useRouteError, BrowserRouter } from 'react-router-dom';
+
+// const App = () => {
+//     const err = useRouteError(); // Uncommented and ready to use
+//     return (
+//         <BrowserRouter>
+//             <>
+//                 <h1>UseRouteError</h1>
+//                 {err && <p>Error: {err.message}</p>}
+//                 <MyComponent />
+//             </>
+//         </BrowserRouter>
+//     );
+// };
+
+// const MyComponent = () => {
+//     const nav = useNavigate();
+
+//     const handleNavigate = () => {
+//         nav('/some-path'); // Example navigation
+//     };
+
+//     return (
+//         <div>
+//             <h3>Navigation Example</h3>
+//             <button onClick={handleNavigate}>Go to Some Path</button>
+//         </div>
+//     );
+// };
+
+// export default App;
