@@ -1,8 +1,8 @@
-import { useRouteError } from "react-router-dom";
+// import { useRouteError } from "react-router-dom";
 
 const Home = () => {
-    const err = useRouteError();
-    console.log(err);
+    // const err = useRouteError();
+    // console.log("this is useRouteErr: ", err);
     return(
         <h1>Home page</h1>
     )

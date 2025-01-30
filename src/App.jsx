@@ -463,10 +463,12 @@
                         // BASIC ROUTS 
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Movie from "./pages/Movie";
 import Contacts from "./pages/Contacts";
+import GetMovieData from "./api/GetMovieData";
 
 const App = () => {
     const router = createBrowserRouter([
@@ -480,7 +482,8 @@ const App = () => {
         },
         {
             path:'/movie',
-            element: <Movie />
+            element: <Movie />,
+            loader: GetMovieData
         },
         {
             path:'/contacts',
