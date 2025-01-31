@@ -462,41 +462,96 @@
 
                         // BASIC ROUTS 
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Movie from "./pages/Movie";
+// import Contacts from "./pages/Contacts";
+// import GetMovieData from "./api/GetMovieData";
+
+// const App = () => {
+//     const router = createBrowserRouter([
+//         {
+//             path:'/',
+//             element: <Home />
+//         },
+//         {
+//             path:'/about',
+//             element: <About />
+//         },
+//         {
+//             path:'/movie',
+//             element: <Movie />,
+//             loader: GetMovieData
+//         },
+//         {
+//             path:'/contacts',
+//             element: <Contacts />
+//         }
+//     ]);
+
+
+//     return(
+//        <>
+//          <h1>React Router</h1>
+//          <RouterProvider router={router}/>
+//        </>
+//     )
+// }
+// export default App;
+
+
+
+
+
+                            // router app layout
+import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import AppLayout from './layout Components/AppLayout';
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Movie from "./pages/Movie";
-import Contacts from "./pages/Contacts";
-import GetMovieData from "./api/GetMovieData";
+import Movie from './pages/Movie';
+import Contacts from './pages/Contacts';
+import GetMovieData from './api/GetMovieData';
 
-const App = () => {
+
+function App() {
     const router = createBrowserRouter([
         {
-            path:'/',
-            element: <Home />
-        },
-        {
-            path:'/about',
-            element: <About />
-        },
-        {
-            path:'/movie',
-            element: <Movie />,
-            loader: GetMovieData
-        },
-        {
-            path:'/contacts',
-            element: <Contacts />
+            path: '/',
+            element: <AppLayout />,
+            children: [
+                {
+                    path: '/',
+                    element: <Home />
+                },
+                {
+                    path: '/about',
+                    element: <About />
+                },
+                {
+                    path: '/movie',
+                    element: <Movie />,
+                    loader: GetMovieData
+                },
+                {
+                    path: '/contacts',
+                    element: <Contacts />
+                }
+            ]
         }
-    ]);
+        
+    ])
 
 
-    return(
-       <>
-         <h1>React Router</h1>
-         <RouterProvider router={router}/>
-       </>
-    )
+
+  return (
+    <>
+        <div>App</div>
+        <RouterProvider router={router}/>
+    </>
+  )
 }
+
 export default App;
