@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 
 function Card({currMovie}) {
     const {Poster, imdbID} = currMovie;
@@ -5,7 +6,9 @@ function Card({currMovie}) {
     <>
         <div>Card component</div>
         <img src={Poster} alt="image" />
-        <button>{imdbID}</button>
+        <NavLink to={`/movie/${imdbID}`}>
+          <button>watch now</button>
+        </NavLink>
     </>
 
   )

@@ -512,8 +512,10 @@ import AppLayout from './layout Components/AppLayout';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Movie from './pages/Movie';
-import Contacts from './pages/Contacts';
+import Contacts, { contactData } from './pages/Contacts';
 import GetMovieData from './api/GetMovieData';
+import MovieDetails from './pages/MovieDetails';
+import { getMovieDetails } from './api/GetMovieDetails';
 
 
 function App() {
@@ -536,8 +538,14 @@ function App() {
                     loader: GetMovieData
                 },
                 {
+                    path: '/movie/:movieID',
+                    element: <MovieDetails />,
+                    loader: getMovieDetails
+                },
+                {
                     path: '/contacts',
-                    element: <Contacts />
+                    element: <Contacts />,
+                    action: contactData     
                 }
             ]
         }
